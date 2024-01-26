@@ -1,0 +1,13 @@
+*.ini
+temp/*
+*/__pycache__/*
+.DS_Store
+*.pyc
+*.log
+*.json
+*.pickle
+*.pkl
+*.egg-info/*
+*/temp/*
+*.png
+*.pdf
