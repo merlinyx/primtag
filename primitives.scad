@@ -51,8 +51,8 @@ module clip(width, height, thickness, dist, open_gap) {
         rotate([angle+90, 0, 90]) edge(w, l, thickness);//, center = false);
     }
 }
-
 //clip(20, 15, 1, 15, 10);
+
 
 module hemisphere(radius) {
     difference() {
@@ -60,5 +60,7 @@ module hemisphere(radius) {
         edge(radius*2, radius*2, radius*2, center=false);
     }
 }
-
-//hemisphere(20);
+// 1. why this shape? 
+// 2. what does center=true/false do?
+// 3. how do we know the axis 
+// hemisphere(20);

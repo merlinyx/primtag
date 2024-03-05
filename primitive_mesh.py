@@ -82,6 +82,14 @@ class PrimitiveMesh:
 
 if __name__ == "__main__":
     primitive_mesh = PrimitiveMesh("clip", {"width": 10, "height": 10, "thickness": 1, "dist": 1, "open_gap": 1})
+    # primitive_mesh = PrimitiveMesh("edge", {"width": 10, "length": 10, "height": 10})
+    # primitive_mesh = PrimitiveMesh("hemisphere", {"radius": 10})
+    # primitive_mesh = PrimitiveMesh("hole", {"arc_radius": 10, "thickness": 1})
+    # primitive_mesh = PrimitiveMesh("hook", {"arc_radius": 10, "arc_angle": 300, "thickness": 1})
+    # primitive_mesh = PrimitiveMesh("rod", {"radius": 10, "length": 10})
+    # primitive_mesh = PrimitiveMesh("surface", {"width": 10, "length": 10})
+    # primitive_mesh = PrimitiveMesh("tube", {"inner_radius": 3, "thickness": 1, "length": 20})
+
     primitive_mesh.init_mesh()
     print(primitive_mesh.V)
     print(primitive_mesh.F)
