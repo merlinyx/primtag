@@ -5,12 +5,17 @@
 #include <igl/opengl/glfw/imgui/ImGuiMenu.h>
 #include <igl/opengl/glfw/imgui/ImGuiHelpers.h>
 #include <iostream>
+#include <fstream>
 #include <sstream>
+
+using namespace std;
+
 
 igl::opengl::glfw::Viewer viewer;
 bool is_mouse_down = false;
 Eigen::MatrixXd V, C;
 Eigen::MatrixXi F;
+std::ofstream myfile;
 
 int main(int argc, char *argv[])
 {
@@ -80,13 +85,31 @@ int main(int argc, char *argv[])
       std::cout << "\n";
     }
 
+
     // Add a button
     if (ImGui::Button("Track Mouse coords", ImVec2(-1,0)))
     {
       trackMouse = !trackMouse;
+      if (trackMouse) {
+        myfile.open("partOne.txt"); //NAME OF THE FILE
+        myfile << viewer.core().view;
+        myfile << "\n";
+        myfile << primative;
+        myfile << "\n";
+        std::cout << viewer.core().view;
+        std::cout << "\n";
+        std::cout << primative;
+        std::cout << "\n";
+      } else {
+        myfile.close();
+      }
     }
 
-    if (trackMouse == true && is_mouse_down == true) {
+    if (trackMouse && is_mouse_down) {
+      myfile << viewer.current_mouse_x;
+      myfile << ", ";
+      myfile << viewer.current_mouse_y;
+      myfile << "\n";
       std::cout << viewer.current_mouse_x;
       std::cout << ", ";
       std::cout << viewer.current_mouse_y;
