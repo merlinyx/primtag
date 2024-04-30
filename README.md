@@ -12,3 +12,7 @@ Add an environment variable named `OPENSCAD_EXEC` if you are on Windows.
 You can update the `modules` variable to be the correct absolute path for you.
 
 Then use `pip install solidpython` and `pip install libigl` to install the packages in your python environment. A working python version is 3.8 but you can probably use the latest python version.
+
+## Using fabhacks_min
+
+activate the environment and run `python viewer`
