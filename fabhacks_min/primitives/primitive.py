@@ -7,9 +7,13 @@ class Primitive:
     # temp folder for meshes
     temp_dir = "temp"
     # openscad command line executable path
-    openscad = os.getenv("OPENSCAD_EXEC")
+    # openscad = os.getenv("OPENSCAD_EXEC")
+    openscad = "/Applications/OpenSCAD.app/Contents/MacOS/OpenSCAD"
     # openscad primitives modules file path
-    modules = str(files('fabhacks').joinpath('primitives','primitives.scad'))
+    print("Current Directory:", os.getcwd())
+
+    # modules = str(files('fabhacks_min').joinpath('primitives','primitives.scad'))
+    modules = 'fabhacks_min/primitives/primitives.scad'
     # whether to enable printing for openscad commands
     verbose = False
     # epsilon factor of extra dimension for primitives to be used for selection in the UI

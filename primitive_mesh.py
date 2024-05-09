@@ -76,7 +76,8 @@ class PrimitiveMesh:
             raise ValueError(f"Unknown primitive type: {self.primitive_type}")
         # render the openscad file to .off file and read the mesh
         scad_render_to_file(b, scadpath)
-        run_args = [openscad, scadpath, "-o", offpath, "-q"]
+        run_args = ["sudo", openscad, scadpath, "-o", offpath, "-q"]
+        print(run_args)
         subprocess.run(run_args)
         self.V, self.F = igl.read_triangle_mesh(offpath)
 

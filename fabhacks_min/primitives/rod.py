@@ -1,5 +1,6 @@
 from primitives.primitive import Primitive
 from solid import *
+from solid import import_scad
 import igl
 import subprocess
 import os
@@ -49,6 +50,6 @@ class Rod(Primitive):
         scadpath = os.path.join(".", Primitive.temp_dir, "rod.scad")
         offpath = os.path.join(".", Primitive.temp_dir, "rod_{}_{}.off".format(self.radius * (1. + Primitive.epsilon), self.length))
         scad_render_to_file(b, scadpath)
-        run_args = [Primitive.openscad, scadpath, "-o", offpath] if Primitive.verbose else [Primitive.openscad, scadpath, "-o", offpath, "-q"]
+        run_args = ["sudo", Primitive.openscad, scadpath, "-o", offpath] if Primitive.verbose else [Primitive.openscad, scadpath, "-o", offpath, "-q"]
         subprocess.run(run_args)
         self.V, self.F = igl.read_triangle_mesh(offpath)

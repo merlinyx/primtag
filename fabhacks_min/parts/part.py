@@ -1,6 +1,6 @@
 from assembly.frame import Frame
 from parts.material import Material
-import pybullet as p
+
 import os
 import igl
 import numpy as np
@@ -168,16 +168,25 @@ class Part:
     def init_mesh_metrics(self, classname=None):
         if classname is None:
             classname = self.__class__.__name__.lower()
-        mesh_path = str(files('fabhacks').joinpath("parts", "meshes", "{}.off".format(classname)))
+        # mesh_path = str(files('fabhacks').joinpath("parts", "meshes", "{}.off".format(classname)))
+        mesh_path = "fabhacks_min/parts/meshes/" + classname + ".off"
+        print(mesh_path)
         if not os.path.exists(mesh_path):
-            mesh_path = str(files('fabhacks').joinpath("parts", "meshes", "{}.obj".format(classname)))
+            # mesh_path = str(files('fabhacks').joinpath("parts", "meshes", "{}.obj".format(classname)))
+            mesh_path = "fabhacks_min/parts/meshes/" + classname + ".obj"
+            print(mesh_path, "What?")
         if not os.path.exists(mesh_path):
-            mesh_path = str(files('fabhacks').joinpath("parts", "meshes", "{}.stl".format(classname)))
+            # mesh_path = str(files('fabhacks').joinpath("parts", "meshes", "{}.stl".format(classname)))
+            mesh_path = "fabhacks_min/parts/meshes/" + classname + ".stl"
+            print(mesh_path, "Huh?")
         if not os.path.exists(self.part_obj_path):
+            print(mesh_path, self.part_obj_path, "Ahha!")
             V, F = igl.read_triangle_mesh(mesh_path)
             igl.write_obj(self.part_obj_path, V, F)
+            
 
-        mesh_metrics_path = str(files('fabhacks').joinpath("parts", "meshes", "{}.metrics".format(classname)))
+        # mesh_metrics_path = str(files('fabhacks').joinpath("parts", "meshes", "{}.metrics".format(classname)))
+        mesh_metrics_path = "fabhacks_min/parts/meshes/" + classname + ".metrics"
         metrics = {}
         if os.path.exists(mesh_metrics_path):
             with open(mesh_metrics_path, 'rb') as f:
