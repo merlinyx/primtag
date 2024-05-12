@@ -1,5 +1,5 @@
-from assembly.frame import Frame
-from parts.material import Material
+from fabhacks_min.assembly.frame import Frame
+from fabhacks_min.parts.material import Material
 
 import os
 import igl
