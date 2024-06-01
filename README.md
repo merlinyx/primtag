@@ -16,3 +16,26 @@ Then use `pip install solidpython` and `pip install libigl` to install the packa
 ## Using fabhacks_min
 
 activate the environment and run `python viewer`
+
+## Access libigl repository
+Clone the libigl repository into your local computer by the command: `git clone https://github.com/libigl/libigl.git`
+
+Build libgil as followings:
+
+`cd libigl`
+
+`mkdir build`
+
+`cd build`
+
+`cmake ..`
+
+`make`
+
+To run the tutorial files, assume you want to run the executable for 106_ViewerMenu.cpp, go to the directory of bin, and run `./106_ViewerMenu`
+
+For more instructions of how to use libigl repository, visit their tutorial page: https://libigl.github.io/
+
+## Build UI For Mesh Segmentation
+Under `step2` directory, `106_ViewerMenu.cpp` adds more functionalities, such as keeping track of the mouse coordinates, plotting the screen points, and segmenting the mesh, for users to interact with the uploaded mesh. 
+
