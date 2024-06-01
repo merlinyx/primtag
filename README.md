@@ -1,6 +1,6 @@
 # primtag
 
-## setting up python environment
+## Setting up python environment
 
 Download openscad from [here](https://openscad.org/).
 
@@ -37,5 +37,11 @@ To run the tutorial files, assume you want to run the executable for 106_ViewerM
 For more instructions of how to use libigl repository, visit their tutorial page: https://libigl.github.io/
 
 ## Build UI For Mesh Segmentation
-Under `step2` directory, `106_ViewerMenu.cpp` adds more functionalities, such as keeping track of the mouse coordinates, plotting the screen points, and segmenting the mesh, for users to interact with the uploaded mesh. 
+Under `step2` directory, `106_ViewerMenu.cpp` adds more functionalities, such as keeping track of the mouse coordinates, plotting the screen points, and segmenting the mesh, etc, for users to interact with the uploaded mesh. 
+We also include the original and reduced mesh in this directory
 
+## Parameters Optimization
+Under the `step3_parameters_learning` directory, we include 7 different types of primitives and corresponding parameter learning `.ipynb` files. 
+
+The Python environment for these Jupiter Notebook files is 3.10
+You also need to download pytorch and pytorch3d dependencies. 
