@@ -40,8 +40,14 @@ For more instructions of how to use libigl repository, visit their tutorial page
 Under `step2` directory, `106_ViewerMenu.cpp` adds more functionalities, such as keeping track of the mouse coordinates, plotting the screen points, and segmenting the mesh, etc, for users to interact with the uploaded mesh. 
 We also include the original and reduced mesh in this directory
 
+We use libigl repository to segment primitive mesh, called reduced mesh, from the original mesh and save it as an obj file. 
+First, upload a mesh. Second, click the `track mouse` button to keep tracking the screen coordinates of the mouse. Third, use the `plot points` button to plot the intersection points and use 'color faces' button to visualize the hit faces. Lastly, click the `segmentation` button to segment and save the mesh from the original mesh based on the selected region. Make sure the selected region to be perfect and to be the tight boundary for the primitive type you want.
+
 ## Parameters Optimization
 Under the `step3_parameters_learning` directory, we include 7 different types of primitives and corresponding parameter learning `.ipynb` files. 
 
 The Python environment for these Jupiter Notebook files is 3.10
 You also need to download pytorch and pytorch3d dependencies. 
+
+## Limitations
+Due to the instability of randomly sampling the points on the surface of each reduced mesh (primitive mesh), the learning part for Clip, Hook, and Hole might not be accurate at all times. When the results are wrong, rerun the file. 
