@@ -79,3 +79,9 @@ There is a slight discrepancy between our current techniques and the ground trut
 ## Future Work
 
 We have uploaded the volumetric mesh, which includes interior faces, for the reduced mesh in the `step2` directory. In future work, we aim to reconstruct the parametrization function for each primitive to sample points both on the surface and interior, improving the accuracy and stability of the learning part.
+
+## Research Showcase
+
+Our team has presented our research poster in two research showcase sessions. The poster highlights our findings and the methodologies used in the project. You can view the poster below:
+
+![Primitive Tagging Research Poster](poster.png)
