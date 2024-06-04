@@ -9,6 +9,5 @@ temp/*
 *.pkl
 *.egg-info/*
 */temp/*
-*.png
 *.pdf
 slack_files/*
