@@ -60,7 +60,4 @@ module hemisphere(radius) {
         edge(radius*2, radius*2, radius*2, center=false);
     }
 }
-// 1. why this shape? 
-// 2. what does center=true/false do?
-// 3. how do we know the axis 
-// hemisphere(20);
+//hemisphere(10);
